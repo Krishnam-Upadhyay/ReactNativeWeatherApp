@@ -5,7 +5,7 @@ export default class App extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Text style={styles.h1}>Hello CodeSandbox</Text>
+        <Text style={styles.h1}>Krishnam CodeSandbox</Text>
         <Text style={styles.h2}>
           Start editing to see some magic happen, even on your mobile device!
         </Text>
