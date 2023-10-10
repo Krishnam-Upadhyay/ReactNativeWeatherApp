@@ -5,7 +5,7 @@ import {
   Text,
   FlatList,
   StatusBar,
-  Image,
+  ImageBackground,
 } from "react-native-web";
 import { Feather } from "@expo/vector-icons";
 import React from "react";
@@ -64,31 +64,32 @@ const UpcomingWeather = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Upcomming Weather</Text>
-      <Image
+      <ImageBackground
         source={require("../../assets/weather.jpg")}
         style={styles.image}
-      />
-      <FlatList
-        data={DATA}
-        renderItem={({ item }) => {
-          return (
-            <Item
-              condition={item.weather[0].main}
-              dt_txt={item.dt_txt}
-              min={item.main.temp_min}
-              max={item.main.temp_max}
-            ></Item>
-          );
-        }}
-        keyExtractor={(item) => item.dt_txt}
-      />
+      >
+        <FlatList
+          data={DATA}
+          renderItem={({ item }) => {
+            return (
+              <Item
+                condition={item.weather[0].main}
+                dt_txt={item.dt_txt}
+                min={item.main.temp_min}
+                max={item.main.temp_max}
+              ></Item>
+            );
+          }}
+          keyExtractor={(item) => item.dt_txt}
+        />
+      </ImageBackground>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "red",
+    backgroundColor: "royalblue",
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
   },
@@ -110,9 +111,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 15,
   },
-  image:{
-    height:100,
-    width:100,
-  }
+  image: {
+    flex: 1,
+  },
 });
 export default UpcomingWeather;
