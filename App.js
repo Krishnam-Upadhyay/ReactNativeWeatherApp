@@ -1,20 +1,21 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, View, Text } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import UpcomingWeather from "./src/components/UpcomingWeather";
-import OurChild from "./src/components/OutChild";
-export default function CurrentWeather() {
+import UpcomingWeather from "./src/components/screens/UpcomingWeather";
+import City from "./src/components/screens/City";
+
+const App = () => {
   return (
     <View style={styles.container}>
-      <UpcomingWeather />
+      <City />
     </View>
   );
-
-}
+};
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-  }
-})
+  container: {
+    flex: 1,
+  },
+});
 
+export default App;

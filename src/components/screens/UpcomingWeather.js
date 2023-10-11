@@ -6,7 +6,7 @@ import {
   FlatList,
   StatusBar,
   ImageBackground,
-} from "react-native-web";
+} from "react-native";
 import { Feather } from "@expo/vector-icons";
 import React from "react";
 
@@ -49,35 +49,26 @@ const DATA = [
   },
 ];
 
-const Item = (props) => {
-  return (
-    <View style={styles.item}>
-      <Feather name="sun" size={50} color={"white"} />
-      <Text style={styles.date}>{props.dt_txt}</Text>
-      <Text style={styles.temp}>{props.min}</Text>
-      <Text style={styles.temp}>{props.max}</Text>
-    </View>
-  );
-};
+import ListItems from "../ListItems";
 
 const UpcomingWeather = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Upcomming Weather</Text>
       <ImageBackground
-        source={require("../../assets/weather.jpg")}
+        source={require("../../../assets/weather.jpg")}
         style={styles.image}
       >
         <FlatList
           data={DATA}
           renderItem={({ item }) => {
             return (
-              <Item
+              <ListItems
                 condition={item.weather[0].main}
                 dt_txt={item.dt_txt}
                 min={item.main.temp_min}
                 max={item.main.temp_max}
-              ></Item>
+              />
             );
           }}
           keyExtractor={(item) => item.dt_txt}
@@ -92,24 +83,6 @@ const styles = StyleSheet.create({
     backgroundColor: "royalblue",
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItem: "center",
-    borderWidth: 5,
-    backgroundColor: "pink",
-  },
-  temp: {
-    color: "white",
-    fontSize: 20,
-  },
-  date: {
-    color: "white",
-    fontSize: 15,
   },
   image: {
     flex: 1,
