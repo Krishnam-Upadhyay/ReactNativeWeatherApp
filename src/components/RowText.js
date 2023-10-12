@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 const RowText = (props) => {
   const {
     messageOne,
@@ -16,5 +16,4 @@ const RowText = (props) => {
   );
 };
 
-const styles = StyleSheet.create({});
 export default RowText;

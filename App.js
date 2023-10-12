@@ -1,21 +1,14 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, SafeAreaView, View, Text } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import UpcomingWeather from "./src/components/screens/UpcomingWeather";
-import City from "./src/components/screens/City";
+
+import Tabs from "./src/components/Tabs";
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <City />
-    </View>
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;

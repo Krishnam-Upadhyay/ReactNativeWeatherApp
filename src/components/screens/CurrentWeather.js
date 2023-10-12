@@ -2,33 +2,50 @@ import React from "react";
 import { StyleSheet, SafeAreaView, View, Text } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import RowText from "../RowText";
-export default function CurrentWeather() {
+import { weatherType } from "../utility/WeatherType";
+const CurrentWeather = () => {
+  const {
+    wrappper,
+    container,
+    temp,
+    feels,
+    like,
+    highLow,
+    boddyWrappper,
+    descrition,
+    message,
+  } = styles;
   return (
-    <SafeAreaView style={styles.wrappper}>
-      <View style={styles.container}>
+    <SafeAreaView style={wrappper}>
+      <View style={container}>
         <Feather name="sun" size={100} color="black"></Feather>
-        <Text style={styles.temp}>current weather</Text>
-        <Text style={styles.temp}>6</Text>
-        <Text style={styles.feels}>feels like 5</Text>
+        <Text style={temp}>current weather</Text>
+        <Text style={temp}>6</Text>
+        <Text style={feels}>feels like 5</Text>
 
-        <RowText messageOne/>
-        <View style={styles.highLow}>
-          <Text style={styles.like}>High:9</Text>
-          <Text style={styles.like}>Low:6</Text>
-        </View>
+        <RowText
+          messageOne={"High:9"}
+          messageTwo={"Low:6"}
+          messageOneStyle={like}
+          messageTwoStyle={like}
+          containerStyle={highLow}
+        />
       </View>
-      <View style={styles.boddyWrappper}>
-        <Text style={styles.descrition}>its sunny day</Text>
-        <Text style={styles.message}>its perfect dya to wear t shirt</Text>
-      </View>
+      <RowText
+        messageOne={"its sunny day"}
+        messageTwo={"its perfect dya to wear t shirt"}
+        messageOneStyle={descrition}
+        messageTwoStyle={message}
+        containerStyle={boddyWrappper}
+      />
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   wrappper: {
     flex: 1,
-    backgroundColor: "pink",
+    backgroundColor: "lightpink",
   },
   container: {
     flex: 1,
@@ -59,7 +76,8 @@ const styles = StyleSheet.create({
   descrition: {
     fontSize: 48,
   },
-  descrition: {
+  message: {
     fontSize: 30,
   },
 });
+export default CurrentWeather;
