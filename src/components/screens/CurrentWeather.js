@@ -33,10 +33,10 @@ const CurrentWeather = () => {
       </View>
       <RowText
         messageOne={"its sunny day"}
-        messageTwo={"its perfect dya to wear t shirt"}
+        messageTwo={weatherType.Thunderstorm.message}
         messageOneStyle={descrition}
         messageTwoStyle={message}
-        containerStyle={boddyWrappper}
+        containerStyle={boddyWrappper} 
       />
     </SafeAreaView>
   );
