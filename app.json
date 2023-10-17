@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "React Native with Expo on CodeSandbox",
+    "name": "WeatherByKrishu",
     "slug": "react-native-codesandbox",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,19 +11,28 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "krishunam.com"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "krishunam.com"
     },
     "web": {
       "bundler": "metro",
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "91e45984-c872-4a67-bcde-85a58220ad31"
+      }
     }
   }
 }
